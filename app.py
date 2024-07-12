@@ -21,6 +21,9 @@ class Projects(db.Model):
         return '<Name %r>' % self.name
 
 
+
+
+
 app.register_blueprint(views, url_prefix="/")
 
 if __name__ == '__main__':
