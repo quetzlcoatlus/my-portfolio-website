@@ -18,9 +18,12 @@
     </form>
 
     {% for project in projects %}
-        <h4>
-            {{ project.name }}
-        </h4>
+        <br/>
+        <h4 class="title-text">{{ project.name }}</h4>
+        <img src="{{ project.thumbnail }}" alt="Project Thumbnail">
+        <p class="desc-text">{{ project.description }}</p>
+        <p class="desc-text">Date Uploaded: {{ project.date }}</p>
+
     {% endfor %}
 
 </div>
