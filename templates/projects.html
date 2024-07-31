@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<head>
-    <title>Projects</title>
-</head>
 <body>
-<div>
+<div class="container">
     <h1 class="title-text">Projects Page</h1>
+    <br/>
+    <form action="/projects" METHOD="POST">
+        <input type="text" placeholder="Name" name="project-name">
+        <br/>
+<!--        <input type="file" placeholder="Thumbnail" name="project-thumbnail">-->
+<!--        <br/>-->
+<!--        <input type="text" placeholder="Description" name="project-description">-->
+<!--        <br/>-->
+<!--        <input type="date" placeholder="Date" name="project-date">-->
+<!--        <br/>-->
+        <input type="submit" value="Add Project" class="btn btn-secondary">
+    </form>
 
 
 
