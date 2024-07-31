@@ -19,13 +19,14 @@
 
     {% for project in projects %}
         <br/>
+    <div class="row" style="max-width:50%">
         <h4 class="title-text">{{ project.name }}</h4>
         <div class="desc-text">
-            <img src="{{ project.thumbnail }}" alt="Project Thumbnail">
+            <img src="{{ project.thumbnail }}" class="img-thumbnail" alt="Project Thumbnail">
             <p>{{ project.description }}</p>
             <p>Date Uploaded: {{ project.date }}</p>
         </div>
-
+    </div>
     {% endfor %}
 
 </div>
