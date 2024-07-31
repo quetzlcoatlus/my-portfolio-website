@@ -1,7 +1,9 @@
 from flask import Flask, Blueprint, render_template, request, redirect
+from werkzeug.utils import secure_filename
 
 from flask_sqlalchemy import SQLAlchemy  # converts python into SQL
 from datetime import datetime
+
 
 # How every Flask app starts
 app = Flask(__name__)
@@ -11,6 +13,7 @@ db = SQLAlchemy(app)
 
 # db Model (required)
 class Projects(db.Model):
+    # data base columns
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
     thumbnail = db.Column(db.BLOB)
@@ -30,19 +33,27 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/projects")
+@app.route("/projects", methods=["POST", "GET"])
 def projects():
     if request.method == "POST":
         project_name = request.form["project-name"]
-        new_project = Projects(name=project_name)
+        project_thumbnail = request.files["project-thumbnail"].read()
+
+        # thumbnail = Img(img=project_thumbnail.read(), mimetype=project_thumbnail.mimetype, name=secure_filename(project_thumbnail.filename))
+
+        project_description = request.form["project-description"]
+        date_string = request.form["project-date"]
+        project_date = datetime.strptime(date_string, "%Y-%m-%d")
+
+        new_project = Projects(name=project_name, thumbnail=project_thumbnail, description=project_description, date=project_date)
 
         # Push to database
-        try:
-            db.session.add(new_project)
-            db.session.commit()
-            return redirect("/projects")
-        except:
-            return "error occurred"
+        # try:
+        db.session.add(new_project)
+        db.session.commit()
+        return redirect("/projects")
+        # except:
+        #     return "error occurred"
 
     else:
         projects_list = Projects.query.order_by(Projects.date)
