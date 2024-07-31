@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, Blueprint, render_template, request, redirect
 from werkzeug.utils import secure_filename
 
@@ -10,13 +12,16 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///projects.db'
 db = SQLAlchemy(app)
 
+# Constants
+app.config["UPLOAD_FOLDER"] = os.path.join("static", "images")
+
 
 # db Model (required)
 class Projects(db.Model):
     # data base columns
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
-    thumbnail = db.Column(db.BLOB)
+    thumbnail = db.Column(db.String(200))  # path to thumbnail in static/images
     description = db.Column(db.String(), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
@@ -37,15 +42,31 @@ def home():
 def projects():
     if request.method == "POST":
         project_name = request.form["project-name"]
-        project_thumbnail = request.files["project-thumbnail"].read()
 
-        # thumbnail = Img(img=project_thumbnail.read(), mimetype=project_thumbnail.mimetype, name=secure_filename(project_thumbnail.filename))
+        # add static image to the UPLOAD FOLDER
+        if "project-thumbnail" in request.files:
+            # upload file
+            file = request.files["project-thumbnail"]
+            filename = secure_filename(file.filename)
+            path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+            file.save(path)
+
+            project_thumbnail = path
+
+        else:
+            project_thumbnail = None
 
         project_description = request.form["project-description"]
+
         date_string = request.form["project-date"]
         project_date = datetime.strptime(date_string, "%Y-%m-%d")
 
-        new_project = Projects(name=project_name, thumbnail=project_thumbnail, description=project_description, date=project_date)
+        new_project = Projects(
+            name=project_name,
+            thumbnail=project_thumbnail,
+            description=project_description,
+            date=project_date
+        )
 
         # Push to database
         # try:

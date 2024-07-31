@@ -20,9 +20,11 @@
     {% for project in projects %}
         <br/>
         <h4 class="title-text">{{ project.name }}</h4>
-        <img src="{{ project.thumbnail }}" alt="Project Thumbnail">
-        <p class="desc-text">{{ project.description }}</p>
-        <p class="desc-text">Date Uploaded: {{ project.date }}</p>
+        <div class="desc-text">
+            <img src="{{ project.thumbnail }}" alt="Project Thumbnail">
+            <p>{{ project.description }}</p>
+            <p>Date Uploaded: {{ project.date }}</p>
+        </div>
 
     {% endfor %}
 
