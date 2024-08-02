@@ -1,11 +1,14 @@
+
 .title-text {
     color: #FFF;
 }
 
 .desc-text {
-    color: #BBB
+    color: #BBB;
 }
 
-#background-image {
-    "background-image: url( {{ 'images/nocturnes.png' }} )"
+.page-background {
+    background-image: url("../images/nocturnes.png");
+    width: 100vh;
+    color: #111
 }
