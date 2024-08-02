@@ -3,8 +3,7 @@
 {% block content %}
 <body>
 <div class="container">
-    <h1 class="title-text">Projects Page</h1>
-    <br/>
+    <h1 class="title-text mt-4">Projects Page</h1>
 <!--    <form action="/projects" METHOD="POST" enctype="multipart/form-data">-->
 <!--        <input type="text" placeholder="Name" name="project-name">-->
 <!--        <br/>-->
@@ -18,13 +17,13 @@
 <!--    </form>-->
 
     {% for project in projects %}
-    <br/><br/>
-    <div class="row p-1 border rounded border-light bg-dark" style="max-width:65%">
+    <div class="row p-2 my-4 border rounded border-light bg-dark" style="max-width:65%">
         <h1 class="title-text mt-2">{{ project.name }}</h1>
         <div class="desc-text">
-            <img src="{{ project.thumbnail }}" class="mt-4 mb-4 img-thumbnail" alt="Project Thumbnail">
-            <p>{{ project.description }}</p>
+            <img src="{{ project.thumbnail }}" class="mt-2 mb-3 p-2 img-thumbnail" alt="Project Thumbnail">
             <p>Date Uploaded: {{ project.date }}</p>
+            <p>{{ project.description }}</p>
+
         </div>
     </div>
     {% endfor %}
