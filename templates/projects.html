@@ -5,24 +5,24 @@
 <div class="container">
     <h1 class="title-text">Projects Page</h1>
     <br/>
-    <form action="/projects" METHOD="POST" enctype="multipart/form-data">
-        <input type="text" placeholder="Name" name="project-name">
-        <br/>
-        <input type="file" placeholder="Thumbnail" name="project-thumbnail" accept=".png, .jpg, .jpeg">
-        <br/>
-        <input type="text" placeholder="Description" name="project-description">
-        <br/>
-        <input type="date" placeholder="Date" name="project-date">
-        <br/>
-        <input type="submit" value="Add Project" class="btn btn-secondary">
-    </form>
+<!--    <form action="/projects" METHOD="POST" enctype="multipart/form-data">-->
+<!--        <input type="text" placeholder="Name" name="project-name">-->
+<!--        <br/>-->
+<!--        <input type="file" placeholder="Thumbnail" name="project-thumbnail" accept=".png, .jpg, .jpeg">-->
+<!--        <br/>-->
+<!--        <input type="text" placeholder="Description" name="project-description">-->
+<!--        <br/>-->
+<!--        <input type="date" placeholder="Date" name="project-date">-->
+<!--        <br/>-->
+<!--        <input type="submit" value="Add Project" class="btn btn-secondary">-->
+<!--    </form>-->
 
     {% for project in projects %}
-        <br/>
-    <div class="row" style="max-width:50%">
-        <h4 class="title-text">{{ project.name }}</h4>
+    <br/><br/>
+    <div class="row p-1 border rounded border-light bg-dark" style="max-width:65%">
+        <h1 class="title-text mt-2">{{ project.name }}</h1>
         <div class="desc-text">
-            <img src="{{ project.thumbnail }}" class="img-thumbnail" alt="Project Thumbnail">
+            <img src="{{ project.thumbnail }}" class="mt-4 mb-4 img-thumbnail" alt="Project Thumbnail">
             <p>{{ project.description }}</p>
             <p>Date Uploaded: {{ project.date }}</p>
         </div>
