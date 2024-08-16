@@ -1,10 +1,12 @@
 
 .title-text {
     color: #FFF;
+    text-shadow: 1px 2px black;
 }
 
 .desc-text {
     color: #BBB;
+    text-shadow: 1px 2px black;
 }
 
 .page-background {
@@ -13,4 +15,11 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100vw;
+}
+
+.project-thumbnail {
+    max-width:100%;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: white;
 }

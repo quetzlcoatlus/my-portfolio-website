@@ -6,6 +6,9 @@ from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy  # converts python into SQL
 from datetime import datetime
 
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
 
 # How every Flask app starts
 app = Flask(__name__)
@@ -29,6 +32,7 @@ class Projects(db.Model):
         return '<Name %r>' % self.name
 
 
+
 views = Blueprint(__name__, "views")
 app.register_blueprint(views, url_prefix="/")
 
@@ -38,8 +42,15 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/projects", methods=["POST", "GET"])
+@app.route("/projects", methods=["GET"])
 def projects():
+    if request.method == "GET":
+        projects_list = Projects.query.order_by(Projects.date)
+        return render_template("projects.html", projects=projects_list)
+
+
+@app.route("/admin", methods=["POST", "GET"])
+def admin():
     if request.method == "POST":
         project_name = request.form["project-name"]
 
@@ -78,7 +89,7 @@ def projects():
 
     else:
         projects_list = Projects.query.order_by(Projects.date)
-        return render_template("projects.html", projects=projects_list)
+        return render_template("admin.html", projects=projects_list)
 
 
 @app.route("/contacts")
