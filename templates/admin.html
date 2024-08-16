@@ -4,17 +4,17 @@
 <body>
 <div class="container">
     <h1 class="title-text mt-4">Admin Panel</h1>
-<!--    <form action="/projects" METHOD="POST" enctype="multipart/form-data">-->
-<!--        <input type="text" placeholder="Name" name="project-name">-->
-<!--        <br/>-->
-<!--        <input type="file" placeholder="Thumbnail" name="project-thumbnail" accept=".png, .jpg, .jpeg">-->
-<!--        <br/>-->
-<!--        <input type="text" placeholder="Description" name="project-description">-->
-<!--        <br/>-->
-<!--        <input type="date" placeholder="Date" name="project-date">-->
-<!--        <br/>-->
-<!--        <input type="submit" value="Add Project" class="btn btn-secondary">-->
-<!--    </form>-->
+    <form action="/projects" METHOD="POST" enctype="multipart/form-data">
+        <input type="text" placeholder="Name" name="project-name">
+        <br/>
+        <input type="file" placeholder="Thumbnail" name="project-thumbnail" accept=".png, .jpg, .jpeg">
+        <br/>
+        <input type="text" placeholder="Description" name="project-description">
+        <br/>
+        <input type="date" placeholder="Date" name="project-date">
+        <br/>
+        <input type="submit" value="Add Project" class="btn btn-secondary">
+    </form>
 
     {% for project in projects %}
     <div class="row p-2 my-4 border rounded border-light bg-dark" style="max-width:65%">
