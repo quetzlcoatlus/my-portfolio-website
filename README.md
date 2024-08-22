@@ -1,3 +1,10 @@
+# My Flask Portfolio Project
+
+Website codebase:
+Python Flask with HTML, CSS, JavasSript
+Python11 in Pycharm Community
+Version control with git
+
 Problem Space/Philosophy ---
 I want a solid project/portfolio to show off my coding projects and maintain them over time.
 
@@ -57,11 +64,6 @@ Webpage Host:
 self hosted? another service?
 https://www.nearlyfreespeech.net/
 Software Dev. Musician. Gamer. Artist.
-
-Website codebase:
-python flask with html, css, javascript
-python11 in pycharm community
-version control with git
 
 Log
 Made a runtime configuration
