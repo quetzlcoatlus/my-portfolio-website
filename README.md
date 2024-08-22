@@ -1,11 +1,13 @@
 # My Flask Portfolio Project
 
-Website codebase:
+
+
+## Website codebase:
 Python Flask with HTML, CSS, JavasSript
 Python11 in Pycharm Community
 Version control with git
 
-Problem Space/Philosophy ---
+## Problem Space/Philosophy ---
 I want a solid project/portfolio to show off my coding projects and maintain them over time.
 
 I want to use the blog feature to learn through teaching; I also want to alleviate some of my fear of failing in programming and my fear of accepting where I am. 
@@ -14,13 +16,13 @@ I love computers, and I love everything about computer science, but I struggle w
 
 In a way, this project is my attempts at planting seeds for a more self-confident tomorrow.
 
-Immediate Questions
+## Immediate Questions
 - Why not just use GitHub?
 GitHub for the code itself is fine, but I'd like to have organized blog/project posts as well as a dedicated website.
 The point is to learn and show the development process over time in a way decentralized from GitHub as well
 Hosting a website effectively accomplishes the same things GitHub does with repository hosting (which is my use case), with a lot more UX flexibility
 
-Concept
+## Concept
 Portfolio Website
 - I want an accessible, cloud-hosted webpage anyone can look at given the URL to see my portfolio
 
@@ -33,14 +35,14 @@ The webpage will have 3 tabs in a navbar element:
 3. Contact Info
 relevant info like my work discord, portfolio youtube, etc.
 
-Stretch Features:
+## Stretch Features:
 - Be able to "highlight" different projects to show up on the front page based on what role I'm most interested in
 
-Navigation
+### Navigation
 Depends on the design, 3 buttons on the top for now
 I'd like to make this more personalized
 
-Portfolio
+### Portfolio
 My portfolio will be on a page on the website (Projects Page)
 
 My portfolio will consist of posts displayed on a webpage
@@ -65,12 +67,20 @@ self hosted? another service?
 https://www.nearlyfreespeech.net/
 Software Dev. Musician. Gamer. Artist.
 
-Log
+## Log
+
 Made a runtime configuration
+
 Added a .gitignore and intentional commits at logical intervals
+
 Refreshed on HTML and CSS syntax
+
 Used Bootstrap
+
 Used a virtual environment in Pycharm
+
 Misconfigured venv was installing sqlalchemy for the user
+
 Had some messed up config files because I renamed the project
+
 Database integration with SQLAlchemy
