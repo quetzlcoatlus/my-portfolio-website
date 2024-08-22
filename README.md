@@ -1,6 +1,6 @@
 # My Flask Portfolio Project
 
-
+![Project Thumbnail](static/images/portfolio-site-thumbnail.png)
 
 ## Website codebase:
 Python Flask with HTML, CSS, JavasSript
